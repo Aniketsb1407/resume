@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aniket Bedjawalge | Engineer Portfolio</title>
+
+  <meta name="description"
+    content="Engineer skilled in HTML, UI/UX, Python, Web Development, and Linux. Based in Pune, India." />
+  <meta name="keywords" content="Engineer, Web Developer, UI UX, Python, Linux, Portfolio" />
+  <meta name="author" content="Aniket Bedjawalge" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .animate-fade-in-down {
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .animate-slide-in-left {
+      animation: slideInLeft 0.8s ease-out;
+    }
+
+    .animate-slide-in-right {
+      animation: slideInRight 0.8s ease-out;
+    }
+
+    .animate-pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .skill-bar {
+      background: linear-gradient(90deg, #3f3f46, #1f2937);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #10b981, #3b82f6);
+      border-radius: 4px;
+      animation: shimmer 0.5s infinite;
+      background-size: 1000px 100%;
+    }
+
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hover-lift {
+      transition: all 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    nav a {
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #10b981;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #10b981, #3b82f6);
+      border-radius: 2px;
+    }
+
+    .scroll-reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-reveal.revealed {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-900 text-white overflow-x-hidden">
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center bg-cover bg-center relative overflow-hidden"
+    style="background-image:url('https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=1200&h=800&fit=crop&q=80');">
+
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/75 via-blue-900/60 to-slate-900/75"></div>
+
+    <!-- Animated background elements -->
+    <div class="absolute top-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-20 left-10 w-72 h-72 bg-green-500/20 rounded-full blur-3xl animate-float"
+      style="animation-delay: 1s;"></div>
+
+    <nav class="absolute top-0 w-full flex justify-between items-center px-12 py-6 text-sm z-50">
+      <div class="flex gap-8">
+        <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+        <a href="#skills" class="text-gray-300 hover:text-white transition">Skills</a>
+        <a href="#projects" class="text-gray-300 hover:text-white transition">Projects</a>
+        <a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a>
+      </div>
+      <span class="text-gray-400">+91 7499383189</span>
+    </nav>
+
+    <div class="relative z-10 px-12 flex items-center justify-between gap-12">
+      <div class="max-w-2xl">
+        <h1 class="text-7xl md:text-8xl font-black mb-4 animate-fade-in-up" style="letter-spacing: -2px;">
+          ANIKET<br>
+          <span class="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">BEDJAWALGE</span>
+        </h1>
+        <p class="mt-6 text-xl text-gray-300 tracking-wider animate-fade-in-up" style="animation-delay: 0.2s;">
+          Engineer · Web Developer · UI/UX Enthusiast
+        </p>
+        <p class="mt-4 text-gray-400 max-w-2xl animate-fade-in-up" style="animation-delay: 0.4s;">
+          Crafting digital solutions with modern design, clean code, and a passion for innovation.
+        </p>
+
+        <div class="mt-10 flex gap-6 animate-fade-in-up" style="animation-delay: 0.6s;">
+          <a href="#projects"
+            class="group relative px-8 py-3 rounded-full border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition duration-300 overflow-hidden">
+            <span class="relative z-10 font-semibold">View Work</span>
+            <div
+              class="absolute inset-0 bg-green-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left">
+            </div>
+          </a>
+          <a href="#contact"
+            class="px-8 py-3 rounded-full border-2 border-gray-500 text-white hover:border-white hover:bg-white/10 transition duration-300 font-semibold">
+            Get in Touch
+          </a>
+        </div>
+
+        <div class="mt-16 animate-fade-in-up" style="animation-delay: 0.8s;">
+          <p class="text-gray-500 text-sm mb-3">Follow me</p>
+          <div class="flex gap-6 text-2xl">
+            <a href="https://www.linkedin.com/in/aniket-bedjawalge-058590347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              class="text-gray-400 hover:text-green-400 transition duration-300 hover-lift"><i
+                class="ri-linkedin-fill"></i></a>
+            <a href="https://github.com/Aniketsb1407"
+              class="text-gray-400 hover:text-green-400 transition duration-300 hover-lift"><i
+                class="ri-github-fill"></i></a>
+            <a href="https://x.com/AniketSB1407"
+              class="text-gray-400 hover:text-green-400 transition duration-300 hover-lift"><i
+                class="ri-twitter-fill"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Image -->
+      <!-- Removed profile image -->
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <i class="ri-arrow-down-line text-2xl text-green-400"></i>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 px-12 max-w-6xl mx-auto relative bg-slate-900">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="scroll-reveal">
+        <h2 class="text-5xl md:text-6xl font-black mb-8">
+          <span class="section-title">ABOUT</span>
+        </h2>
+        <p class="text-gray-400 leading-relaxed text-lg mb-6">
+          I am a passionate engineer with strong expertise in <span class="text-green-400">HTML, UI/UX design</span>,
+          <span class="text-blue-400">Python development</span>, and full-stack website creation. I focus on building
+          clean, efficient, and user-centric digital solutions.
+        </p>
+        <p class="text-gray-400 leading-relaxed text-lg mb-8">
+          I work comfortably in Linux environments and enjoy solving real-world problems through structured thinking,
+          modern design, and scalable code. My passion lies in creating experiences that are both beautiful and
+          functional.
+        </p>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+            <p class="text-gray-300">Based in Pune, Maharashtra · India</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+            <p class="text-gray-300">Available for freelance & full-time opportunities</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+            <p class="text-gray-300">2+ years of professional experience</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-reveal" style="animation-delay: 0.2s;">
+        <div class="glass-effect p-8 rounded-2xl">
+          <div class="space-y-6">
+            <div class="group cursor-pointer">
+              <div class="flex items-center justify-between mb-2 group-hover:translate-x-2 transition">
+                <p class="font-semibold text-lg">Quick Facts</p>
+                <i class="ri-arrow-right-line text-green-400"></i>
+              </div>
+              <div class="h-1 bg-gray-700 rounded overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-green-400 to-blue-500 w-full rounded"></div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mt-8">
+              <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-green-400 transition">
+                <p class="text-3xl font-bold text-green-400">2+</p>
+                <p class="text-gray-400 text-sm mt-2">Years Experience</p>
+              </div>
+              <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-green-400 transition">
+                <p class="text-3xl font-bold text-blue-400">10+</p>
+                <p class="text-gray-400 text-sm mt-2">Projects Completed</p>
+              </div>
+              <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-green-400 transition">
+                <p class="text-3xl font-bold text-green-400">50+</p>
+                <p class="text-gray-400 text-sm mt-2">Happy Clients</p>
+              </div>
+              <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-green-400 transition">
+                <p class="text-3xl font-bold text-blue-400">24/7</p>
+                <p class="text-gray-400 text-sm mt-2">Support Ready</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-24 px-12 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -mr-48"></div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <h2 class="text-5xl md:text-6xl font-black mb-16">
+          <span class="section-title">SKILLS</span>
+        </h2>
+
+        <!-- Core Skills -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-green-400 mb-8">Core Technologies</h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <p class="font-semibold text-lg">HTML</p>
+                <span class="text-green-400 text-sm font-bold">95%</span>
+              </div>
+              <div class="skill-bar h-2">
+                <div class="skill-progress w-[95%]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <p class="font-semibold text-lg">CSS</p>
+                <span class="text-green-400 text-sm font-bold">95%</span>
+              </div>
+              <div class="skill-bar h-2">
+                <div class="skill-progress w-[95%]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <p class="font-semibold text-lg">JavaScript</p>
+                <span class="text-green-400 text-sm font-bold">90%</span>
+              </div>
+              <div class="skill-bar h-2">
+                <div class="skill-progress w-[90%]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <p class="font-semibold text-lg">UI / UX Design</p>
+                <span class="text-green-400 text-sm font-bold">95%</span>
+              </div>
+              <div class="skill-bar h-2">
+                <div class="skill-progress w-[95%]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <p class="font-semibold text-lg">Python</p>
+                <span class="text-green-400 text-sm font-bold">95%</span>
+              </div>
+              <div class="skill-bar h-2">
+                <div class="skill-progress w-[95%]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <p class="font-semibold text-lg">Linux / Terminal</p>
+                <span class="text-green-400 text-sm font-bold">90%</span>
+              </div>
+              <div class="skill-bar h-2">
+                <div class="skill-progress w-[90%]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <p class="font-semibold text-lg">GenAI</p>
+                <span class="text-green-400 text-sm font-bold">80%</span>
+              </div>
+              <div class="skill-bar h-2">
+                <div class="skill-progress w-[80%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & Frameworks -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-blue-400 mb-8">Tools & Frameworks</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass-effect p-6 rounded-xl text-center hover-lift">
+              <i class="ri-figma-fill text-3xl text-purple-400 mb-3 block"></i>
+              <p class="font-semibold">Figma</p>
+            </div>
+            <div class="glass-effect p-6 rounded-xl text-center hover-lift">
+              <i class="ri-github-fill text-3xl text-gray-400 mb-3 block"></i>
+              <p class="font-semibold">Git & GitHub</p>
+            </div>
+            <div class="glass-effect p-6 rounded-xl text-center hover-lift">
+              <i class="ri-brain-line text-3xl text-yellow-400 mb-3 block"></i>
+              <p class="font-semibold">Prompt Engineering</p>
+            </div>
+            <div class="glass-effect p-6 rounded-xl text-center hover-lift">
+              <i class="ri-database-2-fill text-3xl text-blue-500 mb-3 block"></i>
+              <p class="font-semibold">MySQL</p>
+            </div>
+            <div class="glass-effect p-6 rounded-xl text-center hover-lift">
+              <i class="ri-bar-chart-fill text-3xl text-red-500 mb-3 block"></i>
+              <p class="font-semibold">Power BI</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div>
+          <h3 class="text-2xl font-bold text-purple-400 mb-8">Soft Skills</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="glass-effect p-6 rounded-xl hover-lift">
+              <div class="text-4xl mb-3">💡</div>
+              <p class="font-semibold mb-2">Problem Solving</p>
+              <p class="text-gray-400 text-sm">Analytical mindset to solve complex challenges</p>
+            </div>
+            <div class="glass-effect p-6 rounded-xl hover-lift">
+              <div class="text-4xl mb-3">🤝</div>
+              <p class="font-semibold mb-2">Team Collaboration</p>
+              <p class="text-gray-400 text-sm">Excellent communication and teamwork skills</p>
+            </div>
+            <div class="glass-effect p-6 rounded-xl hover-lift">
+              <div class="text-4xl mb-3">⚡</div>
+              <p class="font-semibold mb-2">Quick Learner</p>
+              <p class="text-gray-400 text-sm">Adaptable and always eager to learn new tech</p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-24 px-12 max-w-6xl mx-auto relative bg-slate-900">
+      <h2 class="text-5xl md:text-6xl font-black mb-16">
+        <span class="section-title">PROJECTS</span>
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="scroll-reveal group">
+          <div class="glass-effect rounded-2xl overflow-hidden hover-lift h-full">
+            <div class="h-48 bg-gradient-to-br from-green-500/20 to-blue-500/20 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <i class="ri-global-line text-6xl text-green-400/30 group-hover:scale-110 transition duration-300"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-2">Portfolio Website</h3>
+              <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                Modern, responsive portfolio showcasing projects with smooth animations and glassmorphism design.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-green-400/20 text-green-400 rounded-full text-xs font-semibold">HTML</span>
+                <span class="px-3 py-1 bg-blue-400/20 text-blue-400 rounded-full text-xs font-semibold">CSS</span>
+                <span
+                  class="px-3 py-1 bg-purple-400/20 text-purple-400 rounded-full text-xs font-semibold">Tailwind</span>
+              </div>
+              <a href="#"
+                class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition font-semibold">
+                View Project <i class="ri-arrow-right-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="scroll-reveal group" style="animation-delay: 0.1s;">
+          <div class="glass-effect rounded-2xl overflow-hidden hover-lift h-full">
+            <div class="h-48 bg-gradient-to-br from-orange-500/20 to-red-500/20 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <i
+                  class="ri-code-s-slash-line text-6xl text-orange-400/30 group-hover:scale-110 transition duration-300"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-2">Python Automation</h3>
+              <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                Automated scripts and tools for system administration, data processing, and workflow optimization.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-3 py-1 bg-yellow-400/20 text-yellow-400 rounded-full text-xs font-semibold">Python</span>
+                <span class="px-3 py-1 bg-red-400/20 text-red-400 rounded-full text-xs font-semibold">Linux</span>
+                <span class="px-3 py-1 bg-gray-400/20 text-gray-400 rounded-full text-xs font-semibold">Bash</span>
+              </div>
+              <a href="#"
+                class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition font-semibold">
+                View Project <i class="ri-arrow-right-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="scroll-reveal group" style="animation-delay: 0.2s;">
+          <div class="glass-effect rounded-2xl overflow-hidden hover-lift h-full">
+            <div class="h-48 bg-cover bg-center relative overflow-hidden"
+              style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=400&fit=crop&q=80');">
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-2">UI/UX Design</h3>
+              <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                Beautiful and user-centric interface designs with focus on accessibility, usability, and modern
+                aesthetics.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-purple-400/20 text-purple-400 rounded-full text-xs font-semibold">Figma</span>
+                <span class="px-3 py-1 bg-pink-400/20 text-pink-400 rounded-full text-xs font-semibold">UI Design</span>
+                <span class="px-3 py-1 bg-blue-400/20 text-blue-400 rounded-full text-xs font-semibold">UX
+                  Research</span>
+              </div>
+              <a href="#"
+                class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition font-semibold">
+                View Project <i class="ri-arrow-right-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center scroll-reveal">
+        <p class="text-gray-400 mb-6">Want to see more projects?</p>
+        <a href="#contact"
+          class="inline-block px-8 py-3 rounded-full border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition duration-300 font-semibold">
+          Let's Work Together
+        </a>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 px-12 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
+      <!-- Animated background -->
+      <div class="absolute top-0 left-0 w-96 h-96 bg-green-500/10 rounded-full blur-3xl -ml-48 -mt-48"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -mr-48 -mb-48"></div>
+
+      <div class="max-w-4xl mx-auto relative z-10">
+        <div class="text-center mb-16 scroll-reveal">
+          <h2 class="text-5xl md:text-6xl font-black mb-6">
+            <span class="section-title inline-block">GET IN TOUCH</span>
+          </h2>
+          <p class="text-gray-400 text-lg">
+            Have a project in mind? Let's collaborate and create something amazing together!
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+          <!-- Contact Info -->
+          <div class="scroll-reveal" style="animation-delay: 0.1s;">
+            <h3 class="text-2xl font-bold mb-8">Contact Information</h3>
+
+            <div class="space-y-6">
+              <a href="mailto:aniketsb78@gmail.com"
+                class="glass-effect p-6 rounded-xl hover-lift group flex items-start gap-4">
+                <div class="text-3xl text-green-400 group-hover:scale-110 transition">
+                  <i class="ri-mail-line"></i>
+                </div>
+                <div>
+                  <p class="text-gray-400 text-sm">Email</p>
+                  <p class="font-semibold text-lg">aniketsb78@gmail.com</p>
+                </div>
+              </a>
+
+              <a href="tel:+917499383189" class="glass-effect p-6 rounded-xl hover-lift group flex items-start gap-4">
+                <div class="text-3xl text-blue-400 group-hover:scale-110 transition">
+                  <i class="ri-phone-line"></i>
+                </div>
+                <div>
+                  <p class="text-gray-400 text-sm">Phone</p>
+                  <p class="font-semibold text-lg">+91 7499383189</p>
+                </div>
+              </a>
+
+              <div class="glass-effect p-6 rounded-xl group flex items-start gap-4">
+                <div class="text-3xl text-purple-400 group-hover:scale-110 transition">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <div>
+                  <p class="text-gray-400 text-sm">Location</p>
+                  <p class="font-semibold text-lg">Pune, Maharashtra, India</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10">
+              <p class="text-gray-400 mb-6">Connect with me on social media:</p>
+              <div class="flex gap-4">
+                <a href="https://www.linkedin.com/in/aniket-bedjawalge-058590347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  class="glass-effect w-12 h-12 rounded-full flex items-center justify-center text-xl hover:text-green-400 hover-lift transition">
+                  <i class="ri-linkedin-fill"></i>
+                </a>
+                <a href="https://github.com/Aniketsb1407"
+                  class="glass-effect w-12 h-12 rounded-full flex items-center justify-center text-xl hover:text-green-400 hover-lift transition">
+                  <i class="ri-github-fill"></i>
+                </a>
+                <a href="https://x.com/AniketSB1407"
+                  class="glass-effect w-12 h-12 rounded-full flex items-center justify-center text-xl hover:text-green-400 hover-lift transition">
+                  <i class="ri-twitter-fill"></i>
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="scroll-reveal" style="animation-delay: 0.2s;">
+            <h3 class="text-2xl font-bold mb-8">Send me a Message</h3>
+            <form class="space-y-6" id="contactForm" action="https://formspree.io/f/xvgzwwbn" method="POST">
+              <div>
+                <input type="text" placeholder="Your Name" name="name" required
+                  class="w-full bg-gray-900/50 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-400 transition duration-300">
+              </div>
+              <div>
+                <input type="email" placeholder="Your Email" name="email" required
+                  class="w-full bg-gray-900/50 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-400 transition duration-300">
+              </div>
+              <div>
+                <input type="text" placeholder="Subject" name="subject" required
+                  class="w-full bg-gray-900/50 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-400 transition duration-300">
+              </div>
+              <div>
+                <textarea placeholder="Your Message" name="message" rows="5" required
+                  class="w-full bg-gray-900/50 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-400 transition duration-300 resize-none"></textarea>
+              </div>
+              <button type="submit"
+                class="w-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-black font-bold py-3 rounded-lg transition duration-300 hover:shadow-lg hover:shadow-green-400/50">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="text-center scroll-reveal" style="animation-delay: 0.3s;">
+          <p class="text-gray-500">
+            I typically respond within 24 hours. Looking forward to hearing from you!
+          </p>
+        </div>
+    </section>
+
+    <footer class="text-center py-8 text-gray-500 text-sm border-t border-slate-700 bg-slate-900">
+      <p class="mb-2">© 2025 Aniket Bedjawalge. All rights reserved.</p>
+      <p class="text-xs">Built with <span class="text-red-400">❤</span> using HTML, CSS & JavaScript</p>
+    </footer>
+
+    <script>
+      // Smooth scroll behavior
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // Scroll reveal animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.scroll-reveal').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Form submission handler
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const formData = new FormData(this);
+
+          // Show success message
+          alert('Thank you for your message! I will get back to you soon.');
+          this.reset();
+
+          // Here you can add code to send the form data to your backend
+          // Example: 
+          // fetch('/send-email', { method: 'POST', body: formData })
+          //   .then(response => response.json())
+          //   .then(data => console.log(data));
+        });
+      }
+
+      // Add active state to nav links based on scroll position
+      window.addEventListener('scroll', () => {
+        let current = '';
+        const sections = document.querySelectorAll('section[id]');
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+          }
+        });
+      });
+
+      // Parallax effect on scroll
+      window.addEventListener('scroll', () => {
+        const scrollPosition = window.pageYOffset;
+        const elements = document.querySelectorAll('[style*="animation-delay"]');
+
+        elements.forEach((el, index) => {
+          if (el.closest('section:first-of-type')) {
+            el.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+          }
+        });
+      });
+
+      // Initial animation on page load
+      window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+      });
+    </script>
+
+</body>
+
+</html>
